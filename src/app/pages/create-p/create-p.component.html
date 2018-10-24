@@ -1,0 +1,45 @@
+<form>
+    <div class="row">
+
+        <div class="col">
+            <div class="form-group">
+                <label>Nom du projet</label>
+
+                <input type="text" class="form-control" placeholder="nom" [value]="formCreate.nom" (change)="formCreate.nom = $event.target.value">
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Description</label>
+                <input type="text" class="form-control" placeholder="description" [value]="formCreate.description" (change)="formCreate.description = $event.target.value">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Date de debut</label>
+                <input type="Date" class="form-control" placeholder="debut" [value]="formCreate.debut" (change)="formCreate.debut = $event.target.value">
+                <label>Date de fin</label>
+                <input type="Date" class="form-control" placeholder="fin" [value]="formCreate.fin" (change)="formCreate.fin = $event.target.value">
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <label>Status</label>
+            <select class="form-control" [value]="formCreate.status" (change)="formCreate.status = $event.target.value">
+              <option> A prevoir </option>
+              <option> En cours </option>
+              <option> Terminé </option>
+              <option> Annulé </option>
+            </select>
+        </div>
+    </div>
+
+
+    <!-- bouton d'ajout, utiliser la fonction (click) -->
+    <button type="button" name="button" class="btn btn-info" (click)=createProjet()>Ajouter</button>
+
+</form>

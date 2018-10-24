@@ -1,0 +1,25 @@
+header{
+    padding:10px;
+    text-align: center;
+}
+header ul{
+    list-style: none;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+header ul li a{
+    padding:10px;
+    color: blue;
+    display: inline;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+li {
+    display: inline;
+    border : 1px solid blue;
+}

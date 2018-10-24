@@ -1,0 +1,39 @@
+<div class="projet-details" *ngIf="projet">
+
+    <h4 class="mb-5">Profil de {{projet.nom|uppercase}}</h4>
+
+        <table>
+
+            <tr >
+                <strong>Nom de l'entreprise</strong>
+            </tr>
+            <tr >
+                {{projet.nom|uppercase}}
+            </tr>
+            <tr >
+                <strong>Description du Projet</strong>
+              </tr>
+              <tr>
+                {{projet.description}}
+            </tr>
+            <tr >
+                <strong>Debut du projet</strong>
+                {{projet.debut}}
+            </tr>
+            <tr >
+                <strong>Fin du Projet</strong>
+                {{projet.fin}}
+            </tr>
+            <tr >
+                <strong>Status du Projet</strong>
+                {{projet.status}}
+            </tr>
+
+        </table>
+
+        <div class="mt-5">
+            <a routerLink="/update-p/{{projet._id}}" class="btn btn-primary">Modifier cet utilisateur</a>
+            <button type="button" name="button" class="btn btn-danger" (click)="deleteprojet(projet.id)">Supprimer cet utilisateur</button>
+        </div>
+
+</div>

@@ -1,0 +1,47 @@
+<h1>Liste des Clients</h1>
+
+<div class="counter" *ngIf="clients">
+    <p>{{clients.length}} Clients</p>
+</div>
+
+<div class="mt-5 mb-5">
+    <a routerLink='/createC' class="btn btn-info">Ajouter un Client</a>
+</div>
+
+<table class="table">
+
+    <tr>
+        <td>Nom de l'entreprise</td>
+        <td>Rue</td>
+        <td>Adresse</td>
+        <td>Ville</td>
+        <td>Code Postal</td>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>Tel</td>
+        <td>mail</td>
+        <td>Secteur</td>
+        <td></td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let client of clients">
+            <td width= "200 px">{{client.nom_entreprise}}</td>
+            <td width= "200 px">{{client.rue}}</td>
+            <td width= "200 px">{{client.adresse}}</td>
+            <td width= "200 px">{{client.ville}}</td>
+            <td width= "200 px">{{client.code_postal}}</td>
+            <td width= "200 px">{{client.nom}}</td>
+            <td width= "200 px">{{client.prenom}}</td>
+            <td width= "500 px">{{client.tel}}</td>
+            <td width= "200 px">{{client.mail}}</td>
+            <td width= "150px">{{client.secteur}}</td>
+            <td width= "500 px">
+                <a routerLink="/client/{{client._id}}" class="btn btn-primary">voir client</a>
+                <a routerLink="/update-c/{{client._id}}" class="btn btn-secondary">modifier client</a>
+                <button type="button" name="button" class="btn btn-danger" (click)="deleteClient(client._id)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

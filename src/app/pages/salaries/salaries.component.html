@@ -1,0 +1,43 @@
+<h1>Liste des Salaries</h1>
+
+<div class="counter" *ngIf="salaries">
+    <p>{{salaries.length}} Salaries</p>
+</div>
+
+<div class="mt-5 mb-5">
+    <a routerLink='/createS' class="btn btn-info">Ajouter un Salarie</a>
+</div>
+
+<table class="table">
+
+    <tr>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>Pseudo</td>
+        <td>Anniversaire</td>
+        <td>rue</td>
+        <td>adresse</td>
+        <td>ville</td>
+        <td>poste</td>
+        <td></td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let salarie of salaries">
+            <td width= "200 px">{{salarie.nom}}</td>
+            <td width= "500 px">{{salarie.prenom}}</td>
+            <td width= "200 px">{{salarie.username}}</td>
+            <td width= "150px">{{salarie.naissance}}</td>
+            <td width= "150px">{{salarie.rue}}</td>
+            <td width= "150px">{{salarie.adresse}}</td>
+            <td width= "150px">{{salarie.ville}}</td>
+            <td width= "150px">{{salarie.poste}}</td>
+            <td width= "500 px">
+                <a routerLink="/salarie/{{salarie._id}}" class="btn btn-primary">voir salarie</a>
+                <a routerLink="/update-s/{{salarie._id}}" class="btn btn-secondary">modifier salarie</a>
+                <button type="button" name="button" class="btn btn-danger" (click)="deletesalarie(salarie._id)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

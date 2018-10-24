@@ -1,0 +1,35 @@
+<h1>Liste des Projets</h1>
+
+<div class="counter" *ngIf="projets">
+    <p>{{projets.length}} Projets</p>
+</div>
+
+<div class="mt-5 mb-5">
+    <a routerLink='/createP' class="btn btn-info">Ajouter un projet</a>
+</div>
+
+<table class="table">
+
+    <tr>
+        <td>nom</td>
+        <td>description</td>
+        <td>debut</td>
+        <td>status</td>
+        <td></td>
+    </tr>
+
+    <tbody>
+        <tr *ngFor="let projet of projets">
+            <td width= "200 px">{{projet.nom}}</td>
+            <td width= "500 px">{{projet.description}}</td>
+            <td width= "200 px">{{projet.debut}}</td>
+            <td width= "150px">{{projet.status}}</td>
+            <td width= "500 px">
+                <a routerLink="/projet/{{projet._id}}" class="btn btn-primary">voir projet</a>
+                <a routerLink="/update-p/{{projet._id}}" class="btn btn-secondary">modifier projet</a>
+                <button type="button" name="button" class="btn btn-danger" (click)="deleteProjet(projet._id)">Supprimer</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>

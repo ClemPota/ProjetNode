@@ -1,0 +1,48 @@
+<div class="salarie-details" *ngIf="salarie">
+
+    <h4 class="mb-5">Profil de {{salarie.nom|uppercase}}</h4>
+
+        <table>
+
+            <tr >
+                <strong>Nom du Salarié</strong>
+            </tr>
+            <tr >
+                {{salarie.nom|uppercase}}
+            </tr>
+            <tr >
+                <strong>Prenom</strong>
+            </tr>
+            <tr >
+                {{salarie.prenom}}
+            </tr>
+            <tr >
+                <strong>Pseudo</strong>
+            </tr>
+            <tr >
+                {{salarie.username}}
+            </tr>
+            <tr >
+                <strong>Anniversaire</strong>
+            </tr>
+            <tr >
+                {{salarie.naissance}}
+            </tr>
+            <tr >
+                <strong>Adresse du Salarié</strong>
+
+                {{salarie.rue}} {{salarie.adresse}} {{salarie.ville}}
+            </tr>
+            <tr>
+                <strong>Poste du Salarié</strong>
+                {{salarie.poste}}
+            </tr>
+
+        </table>
+
+        <div class="mt-5">
+            <a routerLink="/update-s/{{salarie._id}}" class="btn btn-primary">Modifier cet utilisateur</a>
+            <button type="button" name="button" class="btn btn-danger" (click)="deletesalarie(salarie.id)">Supprimer cet utilisateur</button>
+        </div>
+
+</div>

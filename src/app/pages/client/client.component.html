@@ -1,0 +1,49 @@
+<div class="client-details" *ngIf="client">
+
+    <h4 class="mb-5">Profil de {{client.nom_entreprise|uppercase}}</h4>
+
+        <table>
+
+            <tr >
+                <strong>Nom de l'entreprise</strong>
+            </tr>
+            <tr >
+                {{client.nom_entreprise|uppercase}}
+            </tr>
+            <tr >
+                <strong>Adresse de l'entreprise</strong>
+
+                {{client.rue}} {{client.adresse}} {{client.ville}} {{client.code_postal}}
+            </tr>
+            <tr >
+                <strong>Contact de l'entreprise</strong>
+            </tr>
+            <tr>
+                <strong>Nom</strong>
+                {{client.nom}}
+            </tr>
+            <tr >
+                <strong>Prenom</strong>
+                {{client.prenom}}
+            </tr>
+            <tr >
+                <strong>Telephone</strong>
+                {{client.tel}}
+            </tr>
+            <tr >
+                <strong>EMail</strong>
+                {{client.mail}}
+            </tr>
+            <tr>
+                <strong>Secteur d'activité</strong>
+                {{client.secteur}}
+            </tr>
+
+        </table>
+
+        <div class="mt-5">
+            <a routerLink="/update-c/{{client._id}}" class="btn btn-primary">Modifier cet utilisateur</a>
+            <button type="button" name="button" class="btn btn-danger" (click)="deleteclient(client.id)">Supprimer cet utilisateur</button>
+        </div>
+
+</div>

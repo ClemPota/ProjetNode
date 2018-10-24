@@ -1,0 +1,67 @@
+<form>
+    <div class="row">
+
+        <div class="col">
+            <div class="form-group">
+                <label>Nom de l'entreprise</label>
+                <input type="text" class="form-control" placeholder="nom de l'entreprise" [value]="formCreate.nom_entreprise" (change)="formCreate.nom_entreprise = $event.target.value">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+          <label>Adresse du l'entreprise</label>
+            <div class="form-group">
+                <label>Rue</label>
+                <input type="int" class="form-control" placeholder="1, 2 .." [value]="formCreate.rue" (change)="formCreate.rue = $event.target.value">
+            </div>
+            <div class="form-group">
+                <label>Adresse</label>
+                <input type="text" class="form-control" placeholder="rue, route, boulevard ..." [value]="formCreate.adresse" (change)="formCreate.adresse = $event.target.value">
+            </div>
+            <div class="form-group">
+                <label>Ville</label>
+                <input type="text" class="form-control" placeholder="Senlis, Paris ..." [value]="formCreate.ville" (change)="formCreate.ville = $event.target.value">
+            </div>
+            <div class="form-group">
+                <label>Code Postal de la Ville</label>
+                <input type="text" class="form-control" placeholder="60000" [value]="formCreate.code_postal" (change)="formCreate.code_postal = $event.target.value">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="row">
+          <div class="col">
+            <label>Contact de l'entreprise</label>
+              <div class="form-group">
+                  <label>Nom</label>
+                  <input type="text" class="form-control" placeholder="nom" [value]="formCreate.nom" (change)="formCreate.nom = $event.target.value">
+              </div>
+              <div class="form-group">
+                  <label>Prenom</label>
+                  <input type="text" class="form-control" placeholder="prenom" [value]="formCreate.prenom" (change)="formCreate.prenom = $event.target.value">
+              </div>
+              <div class="form-group">
+                  <label>Telephone</label>
+                  <input type="int" class="form-control" placeholder="num de tel ..." [value]="formCreate.tel" (change)="formCreate.tel = $event.target.value">
+              </div>
+              <div class="form-group">
+                  <label>EMail</label>
+                  <input type="text" class="form-control" placeholder=".....@......" [value]="formCreate.mail" (change)="formCreate.mail = $event.target.value">
+              </div>
+          </div>
+      </div>
+    </div>
+      <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>Secteur</label>
+                  <input type="text" class="form-control" placeholder=" Informatique " [value]="formCreate.secteur" (change)="formCreate.secteur = $event.target.value">
+            </div>
+        </div>
+      </div>
+
+    <!-- bouton d'ajout, utiliser la fonction (click) -->
+    <button type="button" name="button" class="btn btn-info" (click)=createClient()>Ajouter</button>
+
+</form>
